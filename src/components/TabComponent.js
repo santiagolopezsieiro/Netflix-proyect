@@ -23,15 +23,15 @@ class TabComponent extends Component {
                 selectedIndex={this.state.tabIndex} 
                 onSelect={tabIndex => this.setState({tabIndex})}>
                     <TabList className="tab-nav-container">
-                        <Tab className={`${this.state.tabIndex === 0 ? 'active' : null}`}>
+                        <Tab className={`${this.state.tabIndex === 0 ? 'tab-selected active' : null}`}>
                             <TabDoor />
-                            <p>
+                            <p style={{marginBottom: '1.875rem'}}>
                                 <strong>no comitments<br />
                             Cancel online at anytime
                                 </strong>
                             </p>
                         </Tab>
-                        <Tab className={`${this.state.tabIndex === 1 ? 'active' : null}`}>
+                        <Tab className={`${this.state.tabIndex === 1 ? 'tab-selected active' : null}`}>
                             <TabDevices />
                             <p style={{marginTop: '-5.3125rem' }}>
                                 <strong>Watch anywhere
