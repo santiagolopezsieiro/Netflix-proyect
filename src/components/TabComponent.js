@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'; // ¡
 
+// Style
 import '../css/TabsNav.css';
 
-
+// Tab
 import TabDoor from './tabs_nav/TabDoor';
-
 import TabDevices from './tabs_nav/TabDevices';
-
 import TabPrices from './tabs_nav/TabPrices'
+
+// TabPanel
+import TabContentOne from './TabContentOne'
 
 class TabComponent extends Component {
     
@@ -46,9 +48,13 @@ class TabComponent extends Component {
                             </p>
                         </Tab>
                     </TabList>
+                    {/* {TABS CONTENT} */}
+                    <TabPanel>
+                        <TabContentOne />
+                    </TabPanel>
                 </Tabs>
             </div>
-        )
+        );
     }
 }
 
