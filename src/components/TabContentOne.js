@@ -9,10 +9,13 @@ function TabContentOne() {
         <TabContentContainer>
             <div className="container">
                 <div className="tab-content">
-                    <span>If you decide netflix isn't for you - no problem. No comjitment. Cancel online anytime.</span>
+                    <div>
+                    <span style={{marginBottom: '2rem'}}>
+                        If you decide netflix isn't for you - no problem. No comjitment. Cancel online anytime.</span>
                     <br />
-                    <Button>try it now</Button>
-                    <img src={Img} />
+                        <Button style={{marginTop: '2rem'}}>try it now</Button>
+                    </div>   
+                        <img src={Img} />
                 </div>
             </div>
         </TabContentContainer>
@@ -24,11 +27,15 @@ export default TabContentOne;
 // Main Content Container
 
 const TabContentContainer = styled.div`
-    background: var(--main-deep-dark);
+background: var(--main-deep-dark);
 
-    img{
-        width: 31.875rem
-    }
+.container{
+    margin: 0 10%;
+}
+
+img{
+    width: 31.875rem
+}
 
 
 .tab-content{
