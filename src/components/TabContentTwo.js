@@ -85,4 +85,12 @@ const TabContainer = styled.div`
         text-align: center;
         margin-top: 2rem
     }
+
+    h3{
+        margin: 0.5rem 0;
+    }
+
+    p{
+        color: var(--main-grey)
+    }
 `;
