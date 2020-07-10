@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'; // ¡
 
 // Style
@@ -7,10 +7,11 @@ import '../css/TabsNav.css';
 // Tab
 import TabDoor from './tabs_nav/TabDoor';
 import TabDevices from './tabs_nav/TabDevices';
-import TabPrices from './tabs_nav/TabPrices'
+import TabPrices from './tabs_nav/TabPrices';
 
 // TabPanel
-import TabContentOne from './TabContentOne'
+import TabContentOne from './TabContentOne';
+import TabContentTwo from './TabContentTwo';
 
 class TabComponent extends Component {
     
@@ -22,7 +23,7 @@ class TabComponent extends Component {
         return (
             <div>
                 <Tabs className="tabs" 
-                selectedIndex={this.state.tabIndex} 
+                selectedIndex={this.state.tabIndex} // ¡
                 onSelect={tabIndex => this.setState({tabIndex})}>
                     <TabList className="tab-nav-container">
                         <Tab className={`${this.state.tabIndex === 0 ? 'tab-selected active' : null}`}>
@@ -51,6 +52,9 @@ class TabComponent extends Component {
                     {/* {TABS CONTENT} */}
                     <TabPanel>
                         <TabContentOne />
+                    </TabPanel>
+                    <TabPanel>
+                        <TabContentTwo/>
                     </TabPanel>
                 </Tabs>
             </div>

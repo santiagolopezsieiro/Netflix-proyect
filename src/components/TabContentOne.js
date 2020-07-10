@@ -43,7 +43,7 @@ img{
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
     align-items: center;
-    font-size: 2re,;
+    font-size: 2rem;
     padding: 2.5rem;
 }
 `
