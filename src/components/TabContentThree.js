@@ -145,5 +145,4 @@ table tbody tr td:first-child {
 table tbody tr:nth-child(even) {
     background: #222;   
 }
-
 `;

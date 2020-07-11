@@ -21,7 +21,7 @@ class Header extends Component {
                 <div className="header-content">
                     <Title>See what's next</Title>
                     <Subtitle>WATCH ANYWHERE, CANCEL ANYTIME.</Subtitle>
-                    <Button className="main-offer-btn" primary> 
+                    <Button primary> 
                         try it now
                         <Icon className="iconbtn" icon={ic_keyboard_arrow_right} size={37} />
                     </Button>

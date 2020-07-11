@@ -9,6 +9,7 @@ outline: none;
 margin: ${props => (props.primary ? '0.33%' : '0')};
 padding: ${props => (props.primary ? '1.5rem': '0.8rem 1.3rem')};
 border-radius: 0.1875rem;
+color: #fff;
 font-size: ${props => (props.primary ? '2rem' : '1rem')};
 text-align: center;
 box-shadow: 0 1px 0 rgba(0,0,0,0.45);
