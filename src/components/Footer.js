@@ -80,7 +80,16 @@ import {ic_arrow_drop_down} from 'react-icons-kit/md/ic_arrow_drop_down'
                         <Icon icon={ic_arrow_drop_down} />
                     </div>    
                 </div>
-                <span style={{marginLeft: '15rem', fontSize: '0.9rem'}}>Netflix Argenstina</span>
+                {/* Toggle Language Content */}
+                <div className="lang-toggle">
+                    <ul>
+                        <li>English</li>
+                    </ul>
+                    <ul>
+                        <li>French</li>
+                    </ul>
+                </div>
+                <span style={{marginLeft: '15rem', fontSize: '0.9rem'}}>Netflix Argentina</span>
             </FooterContainer>
         )
     }
@@ -125,11 +134,23 @@ a:hover{
     border: 0.9px solid #333;
     padding: 1rem;
     width: 8rem;
-    display:grid;
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin: 2rem 0 2rem;
+    margin: 2rem 0 0;
     margin-left: 2rem;
 }
 
+//Toggle Language Content
 
+.lang-toggle {
+    margin-left: 15%;
+    position: absolute;
+}
+
+.lang-toggle ul {
+    background: var(--main-deep-dark);
+    width: 8.125rem;
+    border: 1px solid #333;
+    text-align: center;
+}
 `;
