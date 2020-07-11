@@ -1,13 +1,18 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Icon } from 'react-icons-kit';
+import { iosWorld } from 'react-icons-kit/ionicons/iosWorld/';
+import {ic_arrow_drop_down} from 'react-icons-kit/md/ic_arrow_drop_down'
+
 
 
  class Footer extends Component {
     render() {
         return (
             <FooterContainer>
-                <span style={{ marginLeft: '15rem', fontSize: '1.125rem'}}>Questions? <Link>call 1-877-742-1335</Link></span>
+                <span style={{ marginLeft: '15rem', fontSize: '1.125rem'}}>Questions? <Link>call 1-877-742-1335</Link>
+                </span>
                 <div className="footer-columns">
                     <ul>
                         <li>
@@ -68,8 +73,14 @@ import styled from 'styled-components';
                             <Link>Legal Notices</Link>
                         </li>
                     </ul>
-
+                    {/* Language Button */}
+                    <div className="lang-btn">
+                        <Icon icon={iosWorld} size={20}/>
+                        &nbsp;&nbsp;English&nbsp;&nbsp;
+                        <Icon icon={ic_arrow_drop_down} />
+                    </div>    
                 </div>
+                <span style={{marginLeft: '15rem', fontSize: '0.9rem'}}>Netflix Argenstina</span>
             </FooterContainer>
         )
     }
@@ -106,4 +117,19 @@ a:hover{
     text-decoration: underline;
     cursor:pointer;
 }
+
+// Language
+
+.lang-btn{
+    background: transparent;
+    border: 0.9px solid #333;
+    padding: 1rem;
+    width: 8rem;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 2rem 0 2rem;
+    margin-left: 2rem;
+}
+
+
 `;
