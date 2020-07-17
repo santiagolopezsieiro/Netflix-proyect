@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Icon } from 'react-icons-kit';
 import { iosWorld } from 'react-icons-kit/ionicons/iosWorld/';
 import {ic_arrow_drop_down} from 'react-icons-kit/md/ic_arrow_drop_down';
+import { generateMedia } from "styled-media-query";
 
 
 
@@ -113,6 +114,11 @@ handleToggle = e => {
 
 export default Footer;
 
+// Media query
+const customMedia = generateMedia({
+   tablet: '740px'
+})
+
 const FooterContainer = styled.footer`
  background: var(--main-deep-dark);
 padding-top: 10rem;
@@ -127,6 +133,11 @@ color #999;
     overflow: auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    ${customMedia.lessThan('tablet')`
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    `}
+
 }
 
 ul li {

@@ -1,26 +1,69 @@
 /* Tab Nav #1 */
-
 .tab-icon-door{
     width:2.8125rem;
     height: 2.8125rem;
     fill: var(--main-grey);
 }
 
-/* Tab Nav #2 */
+/* Tab Nav Media 1*/
+@media (max-width: 900px) {
+    .tab-icon-door {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+}
 
+
+
+/* Tab Nav #2 */
 .tab-icon-devices{
     width: 9.6875rem;
     height: 9.6875rem;
     fill: var(--main-grey);
 }
 
-/* Tab Nav #3 */
+/* Tab Nav Media 2*/
+@media (max-width: 900px) {
+    .tab-icon-devices {
+        width: 8rem;
+        height: 8rem;
+    }
+}
 
+/* Tab Nav #3 */
 .tab-icon-prices{
     width: 4.375rem;
     height: 4.375rem;
     fill: var(--main-grey);
 }
+
+/* Tab Nav Media 3*/
+@media (max-width: 900px) {
+    .tab-icon-prices {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+}
+
+/* media for tabs nav */
+@media (min-width: 900px) {
+    .mdScreen {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .lgScreen {
+        display: none;
+    }
+
+    .mdScreen {
+        display: block;
+        margin-bottom: 0.4rem;
+    }
+}
+
+
 
 /* tabs */
 
