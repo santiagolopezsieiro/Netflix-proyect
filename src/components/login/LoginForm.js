@@ -1,13 +1,74 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom'; // ¡¡
 
 import FBlogo from '../../images/fb-logo.png'
 
 
-import { Link } from 'react-router-dom'; // ¡¡
+const regexp = RegExp(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/);
+
+const initState = {
+    email: '',
+    password: '',
+    emailError: '',
+    passwordError: ''
+}
 
 
 class LoginForm extends Component {
+
+    state = initState;
+
+    handleEmailChange = e => {
+        this.setState({
+            email: e.target.value
+        });
+    };
+
+    handlePasswordChange = e => {
+        this.setState({
+            password: e.target.value
+        });
+    };
+
+    //Validate
+    validate = () =>{
+        let inputError = false;
+        const errors = {
+            emailError: '',
+            passwordError: ''
+        }
+
+        if(!this.state.email) {
+            inputError = true;
+            errors.emailError = 'Please enter a valid email'
+        } else if (!this.state.email.match(regexp)) {
+            inputError = true;
+            errors.emailError = (
+                <span style={{color: 'red'}}>Your email adrres must be valid</span>
+            )
+        }
+
+        if(this.state.password.length < 4) {
+            inputError = true;
+            errors.passwordError = 'your password must contain between 4 and 60 Characters'
+        }
+
+        this.setState({
+            ...errors
+        })
+
+        return inputError;
+    };
+
+    onSubmit = e => {
+        e.preventDefault()
+
+        const err = this.validate()
+        if(!err)
+        this.setState(initState);
+    }
+
     render() {
         return (
             <FormContainer>
@@ -15,15 +76,31 @@ class LoginForm extends Component {
                     <form>
                         <h1>Sign in</h1>
                         <div className="input-container">
-                            <input className="input-empty" type="email" required/>
+                            <input
+                            className={this.state.emailError 
+                            ? 'input-error input-empty' 
+                            : 'input-empty'} 
+                            type="email" 
+                            onChange={this.handleEmailChange}
+                            required
+                            />
                             <label>e-mail or phone number</label>
+                        <span style={{color: '#db7302'}}>{this.state.emailError}</span>
                         </div>
                         <div className="input-container">
-                            <input className="input-empty" type="password" required/>
+                            <input
+                            className={this.state.passwordError 
+                            ? 'input-error input-empty' 
+                            : 'input-empty'}  
+                            type="password" 
+                            onChange={this.handlePasswordChange}
+                            required
+                            />
                             <label>password</label>
+                            <span style={{color: '#db7302'}}>{this.state.passwordError}</span>
                         </div>
                         <div className="input-container">
-                            <Button type="submit">Sing in</Button>
+                            <Button type="submit" onClick={e => this.onSubmit(e)}>Sing in</Button>
                         </div>
                     <label className="checkbox-container">
                         remember me
@@ -108,6 +185,10 @@ input:focus ~ label {
 
 input:focus {
     outline: none;
+}
+
+.input-error {
+    border-bottom: 1px solid #db7302;
 }
 
 // Checkbox
