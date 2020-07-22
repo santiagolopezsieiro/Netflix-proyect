@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { generateMedia } from "styled-media-query"; // ¡¡
 import { Link } from 'react-router-dom'; // ¡¡
 
 import FBlogo from '../../images/fb-logo.png'
@@ -8,6 +9,7 @@ import FBlogo from '../../images/fb-logo.png'
 const regexp = RegExp(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/);
 
 const initState = {
+    checked: false,
     email: '',
     password: '',
     emailError: '',
@@ -69,6 +71,14 @@ class LoginForm extends Component {
         this.setState(initState);
     }
 
+    // Checkbox
+
+    handlerCheckbox = e => {
+        this.setState({
+            checked: e.target.checked
+        })
+    }
+
     render() {
         return (
             <FormContainer>
@@ -82,6 +92,7 @@ class LoginForm extends Component {
                             : 'input-empty'} 
                             type="email" 
                             onChange={this.handleEmailChange}
+                            value={this.state.email}
                             required
                             />
                             <label>e-mail or phone number</label>
@@ -94,6 +105,7 @@ class LoginForm extends Component {
                             : 'input-empty'}  
                             type="password" 
                             onChange={this.handlePasswordChange}
+                            value={this.state.password}
                             required
                             />
                             <label>password</label>
@@ -104,7 +116,9 @@ class LoginForm extends Component {
                         </div>
                     <label className="checkbox-container">
                         remember me
-                        <input type="checkbox" checked/>
+                        <input type="checkbox" 
+                        defaultChecked={this.state.checked} 
+                        onChange={this.handlerCheckbox}/>
                         <span className="checkmark"></span>
                     </label>
                     <Link to='/' className="need-help">Need help?</Link>
@@ -129,6 +143,11 @@ class LoginForm extends Component {
 
 export default LoginForm;
 
+// Media
+const customMedia = generateMedia({
+    tablet: '640px'
+})
+
 // form container
 
 const FormContainer = styled.div`
@@ -136,6 +155,9 @@ const FormContainer = styled.div`
     justify-content: center;
     position: relative;
     z-index: 5;
+    ${customMedia.lessThan('tablet')`
+    border-bottom: 0.9px solid #999;
+`}
 
 
 
@@ -145,6 +167,10 @@ const FormContainer = styled.div`
     width: 28.125rem;
     height: 41.25rem;
     padding: 4rem;
+    ${customMedia.lessThan('tablet')`
+        padding: 0.6rem;
+        height: 35rem;
+    `}
 }
 
 
@@ -234,6 +260,12 @@ input:focus {
     color: #828282;
     margin-left: 6rem;
     font-size: 0.9rem;
+    &:hover {
+        text-decoration: underline;
+    }
+    ${customMedia.lessThan('tablet')`
+    margin-left: 13rem;
+    `}
 }
 
 

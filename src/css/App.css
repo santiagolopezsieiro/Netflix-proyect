@@ -61,6 +61,12 @@ a{
 
 }
 
+@media (max-width: 640px) {
+    .main-login-container {
+        background: #000;
+    }
+}
+
 .main-login-container::after {
     content: '';
     position: absolute;
