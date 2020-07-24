@@ -13,7 +13,7 @@ const ChoosePlan = () => {
             {/* Header-Top */}
             <div className="header-top">
                 <Link to="/">
-                    <img src={Logo} alt="logo" />
+                    <Logo src={Logo} alt="logo" />
                 </Link>
                 <NavLink to="/login" className="btn singIn-btn">
                     Sign In
@@ -65,5 +65,22 @@ background: #fff;
     flex-direction: column;
     z-index: 2;
 }
+
+//checkmark
+.checkmark-logo {
+    width: 3rem;
+    margin-top: 3.125rem;
+    margin-bottom: 2rem;
+}
 `;
 
+// logo
+const Logo = styled.img`
+    width: 10.5rem;
+    height: 3.5rem;
+    position: absolute;
+    top: 49%;
+    left: 8%;
+    transform: translate(-50%, -50%);
+    margin-left: 0;
+`;
