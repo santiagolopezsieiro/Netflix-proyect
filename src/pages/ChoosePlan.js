@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import Logo from '../svg/logo.svg';
+import logo from '../svg/logo.svg';
 import { Link, NavLink } from 'react-router-dom';
 
 import CheckmarkLogo from '../images/Checkmark.png';
 
 import { Button } from '../components/Button';
+import FooterChoosePlan from '../components/chooseplan/FooterChoosePlan'
 
 const ChoosePlan = () => {
     return (
@@ -13,9 +14,9 @@ const ChoosePlan = () => {
             {/* Header-Top */}
             <div className="header-top">
                 <Link to="/">
-                    <Logo src={Logo} alt="logo" />
+                    <Logo src={logo} alt="logo" />
                 </Link>
-                <NavLink to="/login" className="btn singIn-btn">
+                <NavLink to="/login" className="btn signIn-btn">
                     Sign In
                 </NavLink>
             </div>
@@ -23,7 +24,7 @@ const ChoosePlan = () => {
             <div className="header-content">
                 <img className="checkmark-logo" src={CheckmarkLogo} alt="checkmark img" />
                 <p>
-                    Step<strong>1</strong> of <strong>3</strong>
+                    Step <strong>1</strong> of <strong>3</strong>
                 </p>
                 <h2>Choose your plan.</h2>
                 <div className="checked-list">
@@ -33,6 +34,8 @@ const ChoosePlan = () => {
                 </div>
                 <Button>See the plans</Button>
             </div>
+            <FooterChoosePlan />
+
         </MainContainer>
     )
 }
@@ -47,7 +50,7 @@ background: #fff;
 .header-top {
     background: #fff;
     height: 6rem;
-    border-bottom: 1px solid #6e6e6e;
+    border-bottom: 1px solid #e6e6e6;
 }
 
 .header-content {
@@ -71,6 +74,58 @@ background: #fff;
     width: 3rem;
     margin-top: 3.125rem;
     margin-bottom: 2rem;
+}
+
+.header-content img {
+    margin: 6.25rem auto 1.875rem;
+}
+
+//checkes list
+.checked-list {
+    text-align: left;
+    margin: 1rem auto 3rem;
+    padding-left: 1.563rem;
+    width: 85%;
+    font-size: 17px;
+    padding: auto;
+}
+
+//bullets
+.bullet {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    text-indent: -1em;
+    line-height: 1.2rem;
+}
+
+.checked-list .bullet::before {
+    color: transparent;
+    display: inline-block;
+    position: relative;
+    height: 0.3em;
+    width: 0.8em;
+    content: '';
+    left: -0.9375rem;
+    bottom: 0.1875rem;
+    border-bottom: 1px solid #e50914;
+    border-left: 1px solid #e50914;
+    transform: rotate(-45deg)
+}
+
+// sign in btn
+.signIn-btn {
+    margin: 1.5625rem 3% 0;
+    padding: 0.4375rem 1.0625rem;
+    font-weight: 700;
+    line-height: normal;
+    color: var(--main-dark);
+    font-size: 1.25rem;
+    right: 0;
+    position: absolute;
+    cursor: pointer;
+    &:hover: {
+        text-decoration: underline;
+    }
 }
 `;
 
