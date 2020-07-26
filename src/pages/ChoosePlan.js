@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import logo from '../svg/logo.svg';
 import { Link, NavLink } from 'react-router-dom';
@@ -8,36 +8,46 @@ import CheckmarkLogo from '../images/Checkmark.png';
 import { Button } from '../components/Button';
 import FooterChoosePlan from '../components/chooseplan/FooterChoosePlan'
 
-const ChoosePlan = () => {
-    return (
-        <MainContainer>
-            {/* Header-Top */}
-            <div className="header-top">
-                <Link to="/">
-                    <Logo src={logo} alt="logo" />
-                </Link>
-                <NavLink to="/login" className="btn signIn-btn">
-                    Sign In
-                </NavLink>
-            </div>
-            {/* Header content */}
-            <div className="header-content">
-                <img className="checkmark-logo" src={CheckmarkLogo} alt="checkmark img" />
-                <p>
-                    Step <strong>1</strong> of <strong>3</strong>
-                </p>
-                <h2>Choose your plan.</h2>
-                <div className="checked-list">
-                    <div className="bullet">No commitments, cancel anytime</div>
-                    <div className="bullet">Everything on Netflix for one low price</div>
-                    <div className="bullet">Unlimited viewing on all your devices</div>
-                </div>
-                <Button>See the plans</Button>
-            </div>
-            <FooterChoosePlan />
+class ChoosePlan extends Component {
 
-        </MainContainer>
-    )
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
+    render() {
+        return (
+            <MainContainer>
+                {/* Header-Top */}
+                <div className="header-top">
+                    <Link to="/">
+                        <Logo src={logo} alt="logo" />
+                    </Link>
+                    <NavLink to="/login" className="btn signIn-btn">
+                        Sign In
+                    </NavLink>
+                </div>
+                {/* Header content */}
+                <div className="header-content">
+                    <img className="checkmark-logo" src={CheckmarkLogo} alt="checkmark img" />
+                    <p>
+                        Step <strong>1</strong> of <strong>3</strong>
+                    </p>
+                    <h2>Choose your plan.</h2>
+                    <div className="checked-list">
+                        <div className="bullet">No commitments, cancel anytime</div>
+                        <div className="bullet">Everything on Netflix for one low price</div>
+                        <div className="bullet">Unlimited viewing on all your devices</div>
+                    </div>
+                    <Link to="/">
+                        <Button>See the plans</Button>
+                    </Link>
+                </div>
+                <FooterChoosePlan />
+    
+            </MainContainer>
+        )
+    
+    }
 }
 
 export default ChoosePlan;

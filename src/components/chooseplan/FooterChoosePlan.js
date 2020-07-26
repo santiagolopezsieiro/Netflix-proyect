@@ -8,22 +8,27 @@ const FooterChoosePlan = () => {
         <FooterContainer>
         <div className="footer-wrapper">     
             <span className="question-link">
-                Questions?&nbsp;<Link>Call 1-877-742-1335</Link>
+                Questions?&nbsp;<Link to="/">Call 1-877-742-1335</Link>
             </span>
             <div className="footer-columns">
                 <ul>
                     <li>
-                        <Link>Gift Card Terms</Link>
+                        <Link to="/">FAQ</Link>
                     </li>
                 </ul>
                 <ul>
                     <li>
-                        <Link>Terms of use</Link>
+                        <Link to="/">Help Center</Link>
                     </li>
                 </ul>
                 <ul>
                     <li>    
-                        <Link>Privacy Statement</Link>
+                        <Link to="/">Terms of use</Link>
+                    </li>
+                </ul>
+                <ul>
+                    <li>    
+                        <Link to="/">Privacy</Link>
                     </li>
                 </ul>
             </div> 
@@ -77,4 +82,7 @@ a {
     }
 }
 
+ul {
+    list-style-type: none;
+}
 `;

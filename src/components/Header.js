@@ -24,10 +24,13 @@ class Header extends Component {
                 <div className="header-content">
                     <Title>See what's next</Title>
                     <Subtitle>WATCH ANYWHERE, CANCEL ANYTIME.</Subtitle>
-                    <Button className="main-offer-btn" primary> 
-                        try it now
-                        <Icon className="Icon" icon={ic_keyboard_arrow_right} size={37} />
-                    </Button>
+                    <Link to="choose-plan" className="main-offer-btn">
+                        <Button to="/choose-plan"  primary> 
+                            try it now
+                            <Icon className="Icon" icon={ic_keyboard_arrow_right} size={37} />
+                        </Button>
+                    </Link>
+
                 </div>
             </HeaderComponent> 
         )

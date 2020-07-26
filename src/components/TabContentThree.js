@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Button } from './Button';
-
+import { Link } from 'react-router-dom';
 import { Icon } from 'react-icons-kit' // ¡
 
 //icons
@@ -18,7 +18,9 @@ function TabContentThree() {
                     <span style={{fontSize: '1.5rem'}}>
                         Choose one plan and watch everything on Netflix.
                     </span>
-                    <Button className="btn">Try it now</Button>
+                    <Link className="btn" to="/choose-plan">
+                        <Button>Try it now</Button>
+                    </Link>
                 </div>
                 {/* TAb Button Content */}
                 <div className="tab-bottom-content">
